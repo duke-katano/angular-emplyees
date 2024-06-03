@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="card">
+    <h2>Listado de Empleados</h2>
+    <div class="form-group">
+      <label for="buscar">Buscar por nombre:</label>
+      <input type="text" name="buscar" [(ngModel)]="searchText" (input)="onSearch()" placeholder="Nombre:">
+    </div>
+    <div class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Puesto</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let empleado of empleados">
+            <td>{{ empleado.nombre }}</td>
+            <td>{{ empleado.apellidos }}</td>
+            <td>{{ empleado.puesto }}</td>
+            <td>{{ empleado.fechaNacimiento }}</td>
+            <td class="actions">
+              <button class="btn btn-agregar" (click)="editEmpleado(empleado)">Editar</button>
+              <button class="btn btn-eliminar" (click)="deleteEmpleado(empleado.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <app-empleado-edit *ngIf="empleadoSeleccionado" [empleado]="empleadoSeleccionado"
+      (update)="onUpdate()"></app-empleado-edit>
+  </div>
+</div>
