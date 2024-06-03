@@ -22,9 +22,9 @@ Esta es una aplicación web para gestionar una lista de empleados, creada con An
 - ng test
 
 ## Funcionalidades
-  -Listado de empleados
-  -Búsqueda de empleados por nombre
-  -Registro de nuevo empleado
-  -Modificación de empleados
-  -Baja de empleados
+     -Listado de empleados
+     -Búsqueda de empleados por nombre
+     -Registro de nuevo empleado
+     -Modificación de empleados
+     -Baja de empleados
 
